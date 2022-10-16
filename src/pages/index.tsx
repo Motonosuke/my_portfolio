@@ -1,15 +1,11 @@
-import type { CustomNextPage } from 'next';
+import { CustomNextPage } from 'next';
+import React from 'react';
 
 import { MainLayout } from 'components/Layout';
-import { Box } from 'components/chakra-parts/Layout/Box';
-import { Text } from 'components/chakra-parts/Typography';
+import { HomePage } from 'page-components/home';
 
-const Home: CustomNextPage = () => {
-  return (
-    <Box>
-      <Text>Top Page</Text>
-    </Box>
-  );
+const Home: CustomNextPage = (props) => {
+  return <HomePage {...props} />;
 };
 
 Home.getLayout = MainLayout;
