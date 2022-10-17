@@ -1,6 +1,10 @@
 export const ROUTE_PATHS = {
+  APPLICATION: '/application',
   HOME: '/',
+  INTRODUCTION: '/self-introduction',
   LOGIN: '/login',
+  NOTE: '/note',
+  PANELIST: '/panelist',
   SETTING: {
     ACCOUNT: '/setting/account',
     EMAIL: '/setting/email',
