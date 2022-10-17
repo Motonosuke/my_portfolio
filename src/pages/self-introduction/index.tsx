@@ -2,11 +2,11 @@ import { CustomNextPage } from 'next';
 import React from 'react';
 
 import { MainLayout } from 'components/Layout';
-import { HomePage } from 'page-components/home';
+import { SelfIntroductionPage } from 'page-components/self-introduction';
 
-const Home: CustomNextPage = (props) => {
-  return <HomePage {...props} />;
+const SelfIntroduction: CustomNextPage = (props) => {
+  return <SelfIntroductionPage {...props} />;
 };
 
-Home.getLayout = MainLayout;
-export default Home;
+SelfIntroduction.getLayout = MainLayout;
+export default SelfIntroduction;
