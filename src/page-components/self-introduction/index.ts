@@ -1,0 +1,1 @@
+export { SelfIntroductionPage } from './page';
