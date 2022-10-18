@@ -2,7 +2,8 @@ import Link from 'next/link';
 import React from 'react';
 
 import { Box, Stack, HStack, Center } from 'components/chakra-parts/Layout';
-import { Text, Heading } from 'components/chakra-parts/Typography';
+import { chakra } from 'components/chakra-parts/Other';
+import { Text } from 'components/chakra-parts/Typography';
 import { ROUTE_PATHS } from 'constants/route-paths';
 
 const navList = [
@@ -27,10 +28,14 @@ const navList = [
 export const Sidebar = () => {
   return (
     <Box>
-      <Heading as="h1" size="lg" textAlign="center">
-        &lt; Motonsouke / &gt;
-      </Heading>
-      <Stack mt={12} spacing={12}>
+      <Stack spacing={12}>
+        <Link href={ROUTE_PATHS.HOME}>
+          <a href={ROUTE_PATHS.HOME}>
+            <chakra.span fontSize="2xl" fontWeight="bold">
+              &lt; Motonsouke / &gt;
+            </chakra.span>
+          </a>
+        </Link>
         {navList.map((nav) => (
           <Link href={nav.path} key={nav.path}>
             <a href={nav.path}>{nav.name}</a>
