@@ -17,6 +17,7 @@ export const IMAGE_PATHS = {
   NEXTJS_ICON: '/images/skill-icon/Next.js-500x500.png',
   NUXT_ICON: '/images/skill-icon/Nuxt-500x500.png',
   PHOTOSHOP_ICON: '/images/skill-icon/Photoshop-500x500.png',
+  PORTFOLIO: '/images/PORTFOLIO_1920x1080.png',
   REACT_ICON: '/images/skill-icon/React-500x500.png',
   SAMPLE: '/images/sample.png',
   TAILWIND_ICON: '/images/skill-icon/Tailwind-500x500.png',

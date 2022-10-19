@@ -53,20 +53,9 @@ const ATRAE_SKILL = [
   { name: 'Figma', path: IMAGE_PATHS.FIGMA_ICON },
 ];
 
-// const skillCrossdoorLanguage = [
-//   { path: '/images/skill-icon/Vue-500x500.png' },
-//   { path: '/images/skill-icon/Nuxt-500x500.png' },
-// ];
-
-// const skillAtraeLanguage = [
-//   { path: '/images/skill-icon/React-500x500.png' },
-//   { path: '/images/skill-icon/Next.js-500x500.png' },
-//   { path: '/images/skill-icon/Typescript-500x500.png' },
-// ];
-
 export const SelfIntroductionPage: FC = () => {
   return (
-    <Box>
+    <Box mb={20}>
       <Stack spacing={16}>
         <Box>
           <Heading as="h1">自己紹介</Heading>
