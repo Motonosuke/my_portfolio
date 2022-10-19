@@ -1,7 +1,9 @@
 /* eslint-disable sort-keys */
 export const IMAGE_PATHS = {
   APOLLO_ICON: '/images/skill-icon/Apollo-500x500.png',
+  ATRAE: '/images/ATRAE_1024x768.png',
   CHAKRA_ICON: '/images/skill-icon/Chakra-500x500.png',
+  CROSSDOOR: '/images/CROSSDOOR_1024x768.png',
   CSS_ICON: '/images/skill-icon/CSS-500x500.png',
   DART_ICON: '/images/skill-icon/Dart-500x500.png',
   FIGMA_ICON: '/images/skill-icon/Figma-500x500.png',
