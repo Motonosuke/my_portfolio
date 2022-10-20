@@ -14,28 +14,36 @@ import {
 } from 'components/chakra-parts/DataDisplay';
 import { Box, SimpleGrid } from 'components/chakra-parts/Layout';
 import { Image } from 'components/chakra-parts/MediaAndIcon';
+import { Link } from 'components/chakra-parts/Navigation';
 import { Tooltip } from 'components/chakra-parts/Overlay';
 import { Heading } from 'components/chakra-parts/Typography';
 import { IMAGE_PATHS } from 'constants/image-paths';
+import { ROUTE_PATHS } from 'constants/route-paths';
 
-const ATRAE_SKILL = [
+const PORTFOLIO_APPLICATION_SKILL = [
   { name: 'TypeScript', path: IMAGE_PATHS.TYPESCRIPT_ICON },
   { name: 'React', path: IMAGE_PATHS.REACT_ICON },
   { name: 'Next.js', path: IMAGE_PATHS.NEXTJS_ICON },
   { name: 'Chakra UI', path: IMAGE_PATHS.CHAKRA_ICON },
-  { name: 'Figma', path: IMAGE_PATHS.FIGMA_ICON },
+];
+
+const NOGIZAKRA_APPLICATION_SKILL = [
+  { name: 'TypeScript', path: IMAGE_PATHS.TYPESCRIPT_ICON },
+  { name: 'React', path: IMAGE_PATHS.REACT_ICON },
+  { name: 'Next.js', path: IMAGE_PATHS.NEXTJS_ICON },
+  { name: 'Mantine UI', path: IMAGE_PATHS.MANTINE_ICON },
 ];
 
 export const ApplicationPage: FC = () => {
   return (
-    <Box>
+    <Box mb={20}>
       <Heading as="h1">アプリケーション</Heading>
       <Box>
         <List>
           <ListItem>
-            <TableContainer boxShadow="lg" mt={10} padding={4}>
+            <TableContainer boxShadow="lg" mt={10} padding={4} px={10}>
               <Table variant="simple">
-                <TableCaption>Atrae, Inc </TableCaption>
+                <TableCaption>ポートフォリオ</TableCaption>
                 <Thead>
                   <Tr>
                     <Th>key</Th>
@@ -61,7 +69,7 @@ export const ApplicationPage: FC = () => {
                     <Td>使用技術</Td>
                     <Td>
                       <SimpleGrid columns={3} spacingY={6}>
-                        {ATRAE_SKILL.map((skill) => (
+                        {PORTFOLIO_APPLICATION_SKILL.map((skill) => (
                           <Box key={skill.name}>
                             <Tooltip aria-label="A tooltip" label={skill.name}>
                               <Image alt={skill.name} height={8} src={skill.path} width={8} />
@@ -73,19 +81,67 @@ export const ApplicationPage: FC = () => {
                   </Tr>
                   <Tr>
                     <Td>リンク</Td>
+                    <Td>
+                      <Link _hover={{ textColor: 'primary.300' }} href={ROUTE_PATHS.PORTFOLIO_URL} passHref>
+                        <a aria-label="portfolio" href={ROUTE_PATHS.PORTFOLIO_URL} rel="noreferrer" target="_blank">
+                          {ROUTE_PATHS.PORTFOLIO_URL}
+                        </a>
+                      </Link>
+                    </Td>
+                  </Tr>
+                </Tbody>
+              </Table>
+            </TableContainer>
+          </ListItem>
+          <ListItem>
+            <TableContainer boxShadow="lg" mt={10} padding={4} px={10}>
+              <Table variant="simple">
+                <TableCaption>乃木坂ラジオまとめサイト</TableCaption>
+                <Thead>
+                  <Tr>
+                    <Th>key</Th>
+                    <Th>Value</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  <Tr>
+                    <Td>タイトル</Td>
+                    <Td>乃木坂ラジオまとめサイト</Td>
+                  </Tr>
+                  <Tr>
+                    <Td>画像</Td>
+                    <Td>
+                      <Image alt="atrae company" src={IMAGE_PATHS.ATRAE} width={197} />
+                    </Td>
+                  </Tr>
+                  <Tr>
+                    <Td>概要</Td>
                     <Td>Webフロントエンド</Td>
                   </Tr>
-                  {/* <Tr>
-                    <Td>内容</Td>
+                  <Tr>
+                    <Td>使用技術</Td>
                     <Td>
-                      <UnorderedList spacing={4}>
-                        <ListItem>フルスクラッチで新規サービスの開発</ListItem>
-                        <ListItem>既存プロダクトの新規機能実装</ListItem>
-                        <ListItem>既存プロダクトのパフォーマンスチューニング</ListItem>
-                        <ListItem>スクラムマスター</ListItem>
-                      </UnorderedList>
+                      <SimpleGrid columns={3} spacingY={6}>
+                        {NOGIZAKRA_APPLICATION_SKILL.map((skill) => (
+                          <Box key={skill.name}>
+                            <Tooltip aria-label="A tooltip" label={skill.name}>
+                              <Image alt={skill.name} height={8} src={skill.path} width={8} />
+                            </Tooltip>
+                          </Box>
+                        ))}
+                      </SimpleGrid>
                     </Td>
-                  </Tr> */}
+                  </Tr>
+                  <Tr>
+                    <Td>リンク</Td>
+                    <Td>
+                      <Link _hover={{ textColor: 'primary.300' }} href={ROUTE_PATHS.NOGIZAKA_URL} passHref>
+                        <a aria-label="nogizaka radio" href={ROUTE_PATHS.NOGIZAKA_URL} rel="noreferrer" target="_blank">
+                          {ROUTE_PATHS.NOGIZAKA_URL}
+                        </a>
+                      </Link>
+                    </Td>
+                  </Tr>
                 </Tbody>
               </Table>
             </TableContainer>
