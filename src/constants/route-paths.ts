@@ -5,8 +5,10 @@ export const ROUTE_PATHS = {
   HOME: '/',
   INTRODUCTION: '/self-introduction',
   LOGIN: '/login',
+  NOGIZAKA_URL: 'https://nogizaka-radio.com',
   NOTE: '/note',
   PANELIST: '/panelist',
+  PORTFOLIO_URL: 'https://motonosuke.com',
   SETTING: {
     ACCOUNT: '/setting/account',
     EMAIL: '/setting/email',
