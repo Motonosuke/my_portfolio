@@ -29,7 +29,7 @@ const navList = [
 
 export const Sidebar = () => {
   return (
-    <Box>
+    <Box position="sticky" top={20}>
       <Stack spacing={12}>
         <Link href={ROUTE_PATHS.HOME}>
           <a href={ROUTE_PATHS.HOME}>
