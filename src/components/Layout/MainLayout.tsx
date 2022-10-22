@@ -8,8 +8,7 @@ import { Sidebar } from 'components/sidebar';
 export const MainLayout: CustomLayout = (page) => {
   return (
     <chakra.main>
-      {/* <Header /> */}
-      <Box height="calc(100vh - 64px)" mt={20} mx="auto" width="80vw">
+      <Box mt={20} mx="auto" width="80vw">
         <Grid templateColumns="repeat(12, 1fr)">
           <GridItem colSpan={3}>
             <Sidebar />

@@ -1,4 +1,4 @@
-import { IconBrandTwitter, IconBrandFacebook, IconBrandGithub } from '@tabler/icons';
+import { IconBrandTwitter, IconBrandFacebook, IconBrandGithub, IconUser, IconApps, IconNotes } from '@tabler/icons';
 import Link from 'next/link';
 import React from 'react';
 
@@ -10,26 +10,38 @@ import { ROUTE_PATHS } from 'constants/route-paths';
 
 const navList = [
   {
+    icon: <IconUser size={28} stroke={1.5} strokeLinejoin="miter" />,
     name: '自己紹介',
     path: ROUTE_PATHS.INTRODUCTION,
   },
   {
+    icon: <IconApps size={28} stroke={1.5} strokeLinejoin="miter" />,
     name: 'アプリケーション',
     path: ROUTE_PATHS.APPLICATION,
   },
   {
+    icon: <IconNotes color="black" fill="white" size={28} stroke={1.5} />,
     name: '執筆記事',
     path: ROUTE_PATHS.NOTE,
   },
-  {
-    name: '登壇',
-    path: ROUTE_PATHS.PANELIST,
-  },
+  // {
+  //   icon: (
+  //     <IconBrandTwitter
+  //       color={COLOR_CODES.TWITTER}
+  //       fill={COLOR_CODES.TWITTER}
+  //       size={32}
+  //       stroke={1}
+  //       strokeLinejoin="miter"
+  //     />
+  //   ),
+  //   name: '登壇',
+  //   path: ROUTE_PATHS.PANELIST,
+  // },
 ];
 
 export const Sidebar = () => {
   return (
-    <Box position="sticky" top={20}>
+    <Box borderRight="1px  solid" position="sticky" top={20}>
       <Stack spacing={12}>
         <Link href={ROUTE_PATHS.HOME}>
           <a href={ROUTE_PATHS.HOME}>
@@ -40,7 +52,12 @@ export const Sidebar = () => {
         </Link>
         {navList.map((nav) => (
           <Link href={nav.path} key={nav.path}>
-            <a href={nav.path}>{nav.name}</a>
+            <a href={nav.path}>
+              <HStack>
+                {nav.icon}
+                <Text>{nav.name}</Text>
+              </HStack>
+            </a>
           </Link>
         ))}
         {/* <Text>自己紹介</Text>

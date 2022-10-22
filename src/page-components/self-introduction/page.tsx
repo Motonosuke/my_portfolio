@@ -1,7 +1,17 @@
 import { IconChevronRight } from '@tabler/icons';
 import React, { FC } from 'react';
 
-import { Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer } from 'components/chakra-parts/DataDisplay';
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+  Divider,
+} from 'components/chakra-parts/DataDisplay';
 import { ListItem, UnorderedList } from 'components/chakra-parts/DataDisplay';
 import { Button } from 'components/chakra-parts/Forms';
 import { Box, Flex, Center, Stack, HStack, SimpleGrid } from 'components/chakra-parts/Layout';
@@ -58,7 +68,9 @@ export const SelfIntroductionPage: FC = () => {
     <Box mb={20}>
       <Stack spacing={16}>
         <Box>
-          <Heading as="h1">自己紹介</Heading>
+          <Heading as="h1" textColor="gray">
+            自己紹介
+          </Heading>
           <Center>
             <Image alt="自分のアイコン" height={380} src={IMAGE_PATHS.MY_IMAGE} width={380} />
           </Center>
@@ -69,8 +81,11 @@ export const SelfIntroductionPage: FC = () => {
             特にTypeScriptが好きで、暇があればコードを書いたり、技術調査をしています。
           </Text>
         </Box>
+        <Divider />
         <Box>
-          <Heading as="h2">基本情報</Heading>
+          <Heading as="h2" textColor="gray">
+            基本情報
+          </Heading>
           <TableContainer mt={10}>
             <Table variant="simple">
               <TableCaption>Basic My Information</TableCaption>
@@ -101,11 +116,14 @@ export const SelfIntroductionPage: FC = () => {
             </Table>
           </TableContainer>
         </Box>
+        <Divider />
         <Box>
-          <Heading as="h2">保有スキル</Heading>
+          <Heading as="h2" textColor="gray">
+            保有スキル
+          </Heading>
           <Stack mr={40} mt={8} spacing={10}>
             <Box>
-              <Heading as="h3" fontSize="3xl">
+              <Heading as="h3" fontSize="2xl">
                 基本スキル
               </Heading>
               <SimpleGrid columns={4} mt={6} spacing={2}>
@@ -119,7 +137,7 @@ export const SelfIntroductionPage: FC = () => {
               </SimpleGrid>
             </Box>
             <Box>
-              <Heading as="h3" fontSize="3xl">
+              <Heading as="h3" fontSize="2xl">
                 スタイルスキル
               </Heading>
               <SimpleGrid columns={4} mt={6} spacing={2}>
@@ -133,7 +151,7 @@ export const SelfIntroductionPage: FC = () => {
               </SimpleGrid>
             </Box>
             <Box>
-              <Heading as="h3" fontSize="3xl">
+              <Heading as="h3" fontSize="2xl">
                 デザインスキル
               </Heading>
               <SimpleGrid columns={4} mt={6} spacing={2}>
@@ -148,8 +166,11 @@ export const SelfIntroductionPage: FC = () => {
             </Box>
           </Stack>
         </Box>
+        <Divider />
         <Box>
-          <Heading as="h2">仕事</Heading>
+          <Heading as="h2" textColor="gray">
+            仕事
+          </Heading>
           <TableContainer boxShadow="lg" mt={10} padding={4}>
             <Table variant="simple">
               <TableCaption>Crossdoor, Inc </TableCaption>
