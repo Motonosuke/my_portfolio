@@ -1,15 +1,16 @@
 import type { CustomLayout } from 'next';
 
-import { Header } from 'components/Header';
 import { Box } from 'components/chakra-parts/Layout';
 import { chakra } from 'components/chakra-parts/Other';
+import { IMAGE_PATHS } from 'constants/image-paths';
 
 export const TopLayout: CustomLayout = (page) => {
   return (
     <chakra.main>
-      <Header />
-      <Box height="100vh" mt={20} mx="auto" width="70vw">
-        {page}
+      <Box backgroundImage={IMAGE_PATHS.BACKGROUND_TOP_IMAGE} height="100vh">
+        <Box mx="auto" py={20} width="70vw">
+          {page}
+        </Box>
       </Box>
     </chakra.main>
   );

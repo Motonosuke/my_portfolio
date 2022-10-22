@@ -37,7 +37,9 @@ const NOGIZAKRA_APPLICATION_SKILL = [
 export const ApplicationPage: FC = () => {
   return (
     <Box mb={20}>
-      <Heading as="h1">アプリケーション</Heading>
+      <Heading as="h1" textColor="gray">
+        アプリケーション
+      </Heading>
       <Box>
         <List>
           <ListItem>

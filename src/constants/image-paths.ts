@@ -2,6 +2,7 @@
 export const IMAGE_PATHS = {
   APOLLO_ICON: '/images/skill-icon/Apollo-500x500.png',
   ATRAE: '/images/ATRAE_1024x768.png',
+  BACKGROUND_TOP_IMAGE: '/images/BACKGROUND_PORTFOLIO_TOP.png',
   CHAKRA_ICON: '/images/skill-icon/Chakra-500x500.png',
   CROSSDOOR: '/images/CROSSDOOR_1024x768.png',
   CSS_ICON: '/images/skill-icon/CSS-500x500.png',
@@ -18,6 +19,9 @@ export const IMAGE_PATHS = {
   NUXT_ICON: '/images/skill-icon/Nuxt-500x500.png',
   PHOTOSHOP_ICON: '/images/skill-icon/Photoshop-500x500.png',
   PORTFOLIO: '/images/PORTFOLIO_1920x1080.png',
+  PORTFOLIO_APPLICATION: '/images/PORTFOLIO_APPLICATION.png',
+  PORTFOLIO_MY_IMAGE: '/images/PORTFOLIO_MY_IMAGE.png',
+  PORTFOLIO_NOTE: '/images/PORTFOLIO_NOTE.png',
   REACT_ICON: '/images/skill-icon/React-500x500.png',
   SAMPLE: '/images/sample.png',
   TAILWIND_ICON: '/images/skill-icon/Tailwind-500x500.png',
