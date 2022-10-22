@@ -14,6 +14,7 @@ export const ROUTE_PATHS = {
     EMAIL: '/setting/email',
   },
   TWITTER_URL: 'https://twitter.com/motofreecall',
+  YOUTUBE_CHANNEL_URL: 'https://www.youtube.com/channel/UCFp5T-QmCGCg-1KJ92Y-QHg',
 } as const;
 
 type SettingRouteType = typeof ROUTE_PATHS.SETTING;
