@@ -16,7 +16,7 @@ import { Box, SimpleGrid } from 'components/chakra-parts/Layout';
 import { Image } from 'components/chakra-parts/MediaAndIcon';
 import { Link } from 'components/chakra-parts/Navigation';
 import { Tooltip } from 'components/chakra-parts/Overlay';
-import { Heading } from 'components/chakra-parts/Typography';
+import { Heading, Text } from 'components/chakra-parts/Typography';
 import { IMAGE_PATHS } from 'constants/image-paths';
 import { ROUTE_PATHS } from 'constants/route-paths';
 
@@ -60,12 +60,16 @@ export const ApplicationPage: FC = () => {
                   <Tr>
                     <Td>画像</Td>
                     <Td>
-                      <Image alt="atrae company" src={IMAGE_PATHS.ATRAE} width={197} />
+                      <Image alt="portfolio" src={IMAGE_PATHS.PORTFOLIO_MOCK} width={240} />
                     </Td>
                   </Tr>
                   <Tr>
                     <Td>概要</Td>
-                    <Td>Webフロントエンド</Td>
+                    <Td fontSize="sm">
+                      本サイトです。
+                      <br />
+                      アプリケーションや執筆記事が増え次第、随時更新していきます。
+                    </Td>
                   </Tr>
                   <Tr>
                     <Td>使用技術</Td>
@@ -113,12 +117,18 @@ export const ApplicationPage: FC = () => {
                   <Tr>
                     <Td>画像</Td>
                     <Td>
-                      <Image alt="atrae company" src={IMAGE_PATHS.ATRAE} width={197} />
+                      <Image alt="乃木坂ラジオアプリ" src={IMAGE_PATHS.NOIGZAKA_APP_MOCK} width={240} />
                     </Td>
                   </Tr>
                   <Tr>
                     <Td>概要</Td>
-                    <Td>Webフロントエンド</Td>
+                    <Td fontSize="sm">
+                      <Text maxW="90%" overflow="wrap" whiteSpace="break-spaces">
+                        乃木坂46のラジオを編集、サムネ作りなど全て行いYoutubeに投稿しています。
+                        <br />
+                        ラジオをタイムスケジュールごとにまとたり、ラジオ時間内にツイートされたハッシュタグをまとめたりしています。
+                      </Text>
+                    </Td>
                   </Tr>
                   <Tr>
                     <Td>使用技術</Td>
