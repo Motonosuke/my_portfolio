@@ -2,6 +2,7 @@ import { IconBrandTwitter, IconBrandFacebook, IconBrandGithub, IconUser, IconApp
 import Link from 'next/link';
 import React from 'react';
 
+import { useBreakpointValue } from 'components/chakra-parts/Hooks';
 import { Box, Stack, HStack, Center } from 'components/chakra-parts/Layout';
 import { chakra } from 'components/chakra-parts/Other';
 import { Text } from 'components/chakra-parts/Typography';
@@ -40,12 +41,24 @@ const navList = [
 ];
 
 export const Sidebar = () => {
+  const isMobile = useBreakpointValue({ base: true, xl: false });
+
+  const paddingSize = useBreakpointValue({
+    base: 8,
+    xl: 0,
+  });
+
+  const textSize = useBreakpointValue({
+    base: 'xl',
+    xl: '2xl',
+  });
+
   return (
-    <Box borderRight="1px  solid" position="sticky" top={20}>
-      <Stack spacing={12}>
+    <Box borderRight={isMobile ? undefined : '1px  solid'} position="sticky" top={20}>
+      <Stack px={paddingSize} spacing={12}>
         <Link href={ROUTE_PATHS.HOME}>
           <a href={ROUTE_PATHS.HOME}>
-            <chakra.span fontSize="2xl" fontWeight="bold">
+            <chakra.span fontSize={textSize} fontWeight="bold">
               &lt; Motonsouke / &gt;
             </chakra.span>
           </a>
@@ -60,11 +73,6 @@ export const Sidebar = () => {
             </a>
           </Link>
         ))}
-        {/* <Text>自己紹介</Text>
-        <Text>アプリケーション</Text>
-        <Text>執筆記事</Text>
-        <Text>勉強会の開催</Text>
-        <Text>登壇</Text> */}
       </Stack>
       <Center flexDirection="column" mt={40}>
         <Text fontSize="lg" fontWeight="semibold">
