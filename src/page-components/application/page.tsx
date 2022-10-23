@@ -1,3 +1,4 @@
+import { IconMenu2 } from '@tabler/icons';
 import React, { FC } from 'react';
 
 import {
@@ -12,30 +13,27 @@ import {
   ListItem,
   List,
 } from 'components/chakra-parts/DataDisplay';
-import { Box, SimpleGrid } from 'components/chakra-parts/Layout';
+import { useBreakpointValue, useDisclosure } from 'components/chakra-parts/Hooks';
+import { Box, Grid, GridItem, SimpleGrid } from 'components/chakra-parts/Layout';
 import { Image } from 'components/chakra-parts/MediaAndIcon';
 import { Link } from 'components/chakra-parts/Navigation';
 import { Tooltip } from 'components/chakra-parts/Overlay';
 import { Heading, Text } from 'components/chakra-parts/Typography';
+import { CommonDrawer } from 'components/drawer';
+import { Sidebar } from 'components/sidebar';
+import { NOGIZAKRA_APPLICATION_SKILL, PORTFOLIO_APPLICATION_SKILL } from 'constants/data/skill-set';
 import { IMAGE_PATHS } from 'constants/image-paths';
 import { ROUTE_PATHS } from 'constants/route-paths';
 
-const PORTFOLIO_APPLICATION_SKILL = [
-  { name: 'TypeScript', path: IMAGE_PATHS.TYPESCRIPT_ICON },
-  { name: 'React', path: IMAGE_PATHS.REACT_ICON },
-  { name: 'Next.js', path: IMAGE_PATHS.NEXTJS_ICON },
-  { name: 'Chakra UI', path: IMAGE_PATHS.CHAKRA_ICON },
-];
-
-const NOGIZAKRA_APPLICATION_SKILL = [
-  { name: 'TypeScript', path: IMAGE_PATHS.TYPESCRIPT_ICON },
-  { name: 'React', path: IMAGE_PATHS.REACT_ICON },
-  { name: 'Next.js', path: IMAGE_PATHS.NEXTJS_ICON },
-  { name: 'Mantine UI', path: IMAGE_PATHS.MANTINE_ICON },
-];
-
 export const ApplicationPage: FC = () => {
-  return (
+  const isMobile = useBreakpointValue({ base: true, lg: false });
+  const columnLeftSize = useBreakpointValue({ base: 4, xl: 3 });
+  const columnRightSize = useBreakpointValue({ base: 8, xl: 9 });
+  const paddingSize = useBreakpointValue({ base: 10, lg: 10, md: 6, xl: 20 });
+
+  const { isOpen, onClose, onOpen } = useDisclosure();
+
+  const component = (
     <Box mb={20}>
       <Heading as="h1" textColor="gray">
         アプリケーション
@@ -160,6 +158,32 @@ export const ApplicationPage: FC = () => {
           </ListItem>
         </List>
       </Box>
+    </Box>
+  );
+
+  return (
+    <Box>
+      <CommonDrawer isOpen={isOpen} onClose={onClose} />
+      <Grid templateColumns="repeat(12, 1fr)">
+        {isMobile ? (
+          <>
+            <GridItem colSpan={11} />
+            <GridItem colSpan={1} justifyContent="end">
+              <IconMenu2 color="black" onClick={onOpen} size={32} stroke={1} strokeLinejoin="miter" />
+            </GridItem>
+            <GridItem colSpan={12}>{component}</GridItem>
+          </>
+        ) : (
+          <>
+            <GridItem colSpan={columnLeftSize}>
+              <Sidebar />
+            </GridItem>
+            <GridItem colSpan={columnRightSize} px={paddingSize}>
+              {component}
+            </GridItem>
+          </>
+        )}
+      </Grid>
     </Box>
   );
 };
