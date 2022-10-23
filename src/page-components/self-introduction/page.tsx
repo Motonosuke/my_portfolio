@@ -10,6 +10,7 @@ import { Skill, Work, Profile, BasicInformation } from 'page-components/self-int
 
 export const SelfIntroductionPage: FC = () => {
   const isMobile = useBreakpointValue({ base: true, lg: false });
+
   const columnLeftSize = useBreakpointValue({ base: 4, xl: 3 });
   const columnRightSize = useBreakpointValue({ base: 8, xl: 9 });
   const paddingSize = useBreakpointValue({ base: 10, lg: 10, md: 6, xl: 20 });
