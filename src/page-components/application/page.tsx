@@ -33,6 +33,26 @@ export const ApplicationPage: FC = () => {
 
   const { isOpen, onClose, onOpen } = useDisclosure();
 
+  const applicationList = [
+    {
+      description: '本サイトです。\nアプリケーションや執筆記事が増え次第、随時更新していきます。',
+      imageAlt: 'portfolio',
+      imagePath: IMAGE_PATHS.PORTFOLIO_MOCK,
+      skillSet: PORTFOLIO_APPLICATION_SKILL,
+      title: 'ポートフォリオ',
+      url: ROUTE_PATHS.PORTFOLIO_URL,
+    },
+    {
+      description:
+        '乃木坂46のラジオを編集、サムネ作りなど行いYoutubeに投稿しています。\nそのコンテンツをラジオのスケジュールごとにまとたり、ラジオ時間内にツイートされたハッシュタグをまとめたりしています。',
+      imageAlt: '乃木坂ラジオアプリ',
+      imagePath: IMAGE_PATHS.NOIGZAKA_APP_MOCK,
+      skillSet: NOGIZAKRA_APPLICATION_SKILL,
+      title: '乃木坂ラジオまとめサイト',
+      url: ROUTE_PATHS.NOGIZAKA_URL,
+    },
+  ];
+
   const component = (
     <Box mb={20}>
       <Heading as="h1" textColor="gray">
@@ -40,122 +60,65 @@ export const ApplicationPage: FC = () => {
       </Heading>
       <Box>
         <List>
-          <ListItem>
-            <TableContainer boxShadow="lg" mt={10} padding={4} px={10}>
-              <Table variant="simple">
-                <TableCaption>ポートフォリオ</TableCaption>
-                <Thead>
-                  <Tr>
-                    <Th>key</Th>
-                    <Th>Value</Th>
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  <Tr>
-                    <Td>タイトル</Td>
-                    <Td>ポートフォリオ</Td>
-                  </Tr>
-                  <Tr>
-                    <Td>画像</Td>
-                    <Td>
-                      <Image alt="portfolio" src={IMAGE_PATHS.PORTFOLIO_MOCK} width={240} />
-                    </Td>
-                  </Tr>
-                  <Tr>
-                    <Td>概要</Td>
-                    <Td fontSize="sm">
-                      本サイトです。
-                      <br />
-                      アプリケーションや執筆記事が増え次第、随時更新していきます。
-                    </Td>
-                  </Tr>
-                  <Tr>
-                    <Td>使用技術</Td>
-                    <Td>
-                      <SimpleGrid columns={3} spacingY={6}>
-                        {PORTFOLIO_APPLICATION_SKILL.map((skill) => (
-                          <Box key={skill.name}>
-                            <Tooltip aria-label="A tooltip" label={skill.name}>
-                              <Image alt={skill.name} height={8} src={skill.path} width={8} />
-                            </Tooltip>
-                          </Box>
-                        ))}
-                      </SimpleGrid>
-                    </Td>
-                  </Tr>
-                  <Tr>
-                    <Td>リンク</Td>
-                    <Td>
-                      <Link _hover={{ textColor: 'primary.300' }} href={ROUTE_PATHS.PORTFOLIO_URL} passHref>
-                        <a aria-label="portfolio" href={ROUTE_PATHS.PORTFOLIO_URL} rel="noreferrer" target="_blank">
-                          {ROUTE_PATHS.PORTFOLIO_URL}
-                        </a>
-                      </Link>
-                    </Td>
-                  </Tr>
-                </Tbody>
-              </Table>
-            </TableContainer>
-          </ListItem>
-          <ListItem>
-            <TableContainer boxShadow="lg" mt={10} padding={4} px={10}>
-              <Table variant="simple">
-                <TableCaption>乃木坂ラジオまとめサイト</TableCaption>
-                <Thead>
-                  <Tr>
-                    <Th>key</Th>
-                    <Th>Value</Th>
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  <Tr>
-                    <Td>タイトル</Td>
-                    <Td>乃木坂ラジオまとめサイト</Td>
-                  </Tr>
-                  <Tr>
-                    <Td>画像</Td>
-                    <Td>
-                      <Image alt="乃木坂ラジオアプリ" src={IMAGE_PATHS.NOIGZAKA_APP_MOCK} width={240} />
-                    </Td>
-                  </Tr>
-                  <Tr>
-                    <Td>概要</Td>
-                    <Td fontSize="sm">
-                      <Text maxW="90%" overflow="wrap" whiteSpace="break-spaces">
-                        乃木坂46のラジオを編集、サムネ作りなど行いYoutubeに投稿しています。
-                        <br />
-                        そのコンテンツをラジオのスケジュールごとにまとたり、ラジオ時間内にツイートされたハッシュタグをまとめたりしています。
-                      </Text>
-                    </Td>
-                  </Tr>
-                  <Tr>
-                    <Td>使用技術</Td>
-                    <Td>
-                      <SimpleGrid columns={3} spacingY={6}>
-                        {NOGIZAKRA_APPLICATION_SKILL.map((skill) => (
-                          <Box key={skill.name}>
-                            <Tooltip aria-label="A tooltip" label={skill.name}>
-                              <Image alt={skill.name} height={8} src={skill.path} width={8} />
-                            </Tooltip>
-                          </Box>
-                        ))}
-                      </SimpleGrid>
-                    </Td>
-                  </Tr>
-                  <Tr>
-                    <Td>リンク</Td>
-                    <Td>
-                      <Link _hover={{ textColor: 'primary.300' }} href={ROUTE_PATHS.NOGIZAKA_URL} passHref>
-                        <a aria-label="nogizaka radio" href={ROUTE_PATHS.NOGIZAKA_URL} rel="noreferrer" target="_blank">
-                          {ROUTE_PATHS.NOGIZAKA_URL}
-                        </a>
-                      </Link>
-                    </Td>
-                  </Tr>
-                </Tbody>
-              </Table>
-            </TableContainer>
-          </ListItem>
+          {applicationList.map((application) => (
+            <ListItem key={application.title}>
+              <TableContainer boxShadow="lg" mt={10} padding={4} px={10}>
+                <Table variant="simple">
+                  <TableCaption>{application.title}</TableCaption>
+                  <Thead>
+                    <Tr>
+                      <Th>key</Th>
+                      <Th>Value</Th>
+                    </Tr>
+                  </Thead>
+                  <Tbody>
+                    <Tr>
+                      <Td>タイトル</Td>
+                      <Td>{application.title}</Td>
+                    </Tr>
+                    <Tr>
+                      <Td>画像</Td>
+                      <Td>
+                        <Image alt={application.imageAlt} src={application.imagePath} width={240} />
+                      </Td>
+                    </Tr>
+                    <Tr>
+                      <Td>概要</Td>
+                      <Td fontSize="sm">
+                        <Text maxW="90%" overflow="wrap" whiteSpace="break-spaces">
+                          {application.description}
+                        </Text>
+                      </Td>
+                    </Tr>
+                    <Tr>
+                      <Td>使用技術</Td>
+                      <Td>
+                        <SimpleGrid columns={3} spacingY={6}>
+                          {application.skillSet.map((skill) => (
+                            <Box key={skill.name}>
+                              <Tooltip aria-label="A tooltip" label={skill.name}>
+                                <Image alt={skill.name} height={8} src={skill.path} width={8} />
+                              </Tooltip>
+                            </Box>
+                          ))}
+                        </SimpleGrid>
+                      </Td>
+                    </Tr>
+                    <Tr>
+                      <Td>リンク</Td>
+                      <Td>
+                        <Link _hover={{ textColor: 'primary.300' }} href={application.url} passHref>
+                          <a aria-label="portfolio" href={application.url} rel="noreferrer" target="_blank">
+                            {application.url}
+                          </a>
+                        </Link>
+                      </Td>
+                    </Tr>
+                  </Tbody>
+                </Table>
+              </TableContainer>
+            </ListItem>
+          ))}
         </List>
       </Box>
     </Box>
