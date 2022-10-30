@@ -27,7 +27,7 @@ export const HomePage: FC = () => {
 
   const isMobile = useBreakpointValue({ base: true, md: false });
 
-  const imageMap = [
+  const contentList = [
     {
       alt: '自己紹介',
       path: ROUTE_PATHS.INTRODUCTION,
@@ -53,7 +53,7 @@ export const HomePage: FC = () => {
       spacingX={gridColumns?.spacingX}
       spacingY={gridColumns?.spacingY}
     >
-      {imageMap.map((content) => (
+      {contentList.map((content) => (
         <Link href={content.path} key={content.path}>
           <a href={content.path}>
             <Image
