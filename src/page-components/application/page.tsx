@@ -122,9 +122,9 @@ export const ApplicationPage: FC = () => {
                     <Td>概要</Td>
                     <Td fontSize="sm">
                       <Text maxW="90%" overflow="wrap" whiteSpace="break-spaces">
-                        乃木坂46のラジオを編集、サムネ作りなど全て行いYoutubeに投稿しています。
+                        乃木坂46のラジオを編集、サムネ作りなど行いYoutubeに投稿しています。
                         <br />
-                        ラジオをタイムスケジュールごとにまとたり、ラジオ時間内にツイートされたハッシュタグをまとめたりしています。
+                        そのコンテンツをラジオのスケジュールごとにまとたり、ラジオ時間内にツイートされたハッシュタグをまとめたりしています。
                       </Text>
                     </Td>
                   </Tr>

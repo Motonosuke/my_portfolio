@@ -55,4 +55,5 @@ export const NOGIZAKRA_APPLICATION_SKILL = [
   { name: 'React', path: IMAGE_PATHS.REACT_ICON },
   { name: 'Next.js', path: IMAGE_PATHS.NEXTJS_ICON },
   { name: 'Mantine UI', path: IMAGE_PATHS.MANTINE_ICON },
+  { name: 'Supabase', path: IMAGE_PATHS.SUPABASE_ICON },
 ];
