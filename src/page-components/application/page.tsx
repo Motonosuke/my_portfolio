@@ -107,10 +107,14 @@ export const ApplicationPage: FC = () => {
                     <Tr>
                       <Td>リンク</Td>
                       <Td>
-                        <Link _hover={{ textColor: 'primary.300' }} href={application.url} passHref>
-                          <a aria-label="portfolio" href={application.url} rel="noreferrer" target="_blank">
-                            {application.url}
-                          </a>
+                        <Link
+                          _hover={{ textColor: 'primary.300' }}
+                          href={application.url}
+                          passHref
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          {application.url}
                         </Link>
                       </Td>
                     </Tr>
