@@ -30,9 +30,9 @@
     "@emotion/styled": "^11",
     "@tabler/icons": "^1.105.0",
     "framer-motion": "^4",
-    "next": "12.0.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "next": "13.0.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@chakra-ui/icons": "^1.1.7",
@@ -43,7 +43,7 @@
     "axios": "^0.26.1",
     "axios-case-converter": "^0.9.0",
     "eslint": "7.32.0",
-    "eslint-config-next": "12.0.1",
+    "eslint-config-next": "13.0.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.2",
