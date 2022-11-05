@@ -56,21 +56,17 @@ export const Sidebar = () => {
   return (
     <Box borderRight={isMobile ? undefined : '1px  solid'} position="sticky" top={20}>
       <Stack px={paddingSize} spacing={12}>
-        <Link href={ROUTE_PATHS.HOME}>
-          <a href={ROUTE_PATHS.HOME}>
-            <chakra.span fontSize={textSize} fontWeight="bold">
-              &lt; Motonsouke / &gt;
-            </chakra.span>
-          </a>
+        <Link href={ROUTE_PATHS.HOME} passHref>
+          <chakra.span fontSize={textSize} fontWeight="bold">
+            &lt; Motonsouke / &gt;
+          </chakra.span>
         </Link>
         {navList.map((nav) => (
-          <Link href={nav.path} key={nav.path}>
-            <a href={nav.path}>
-              <HStack>
-                {nav.icon}
-                <Text>{nav.name}</Text>
-              </HStack>
-            </a>
+          <Link href={nav.path} key={nav.path} passHref>
+            <HStack>
+              {nav.icon}
+              <Text>{nav.name}</Text>
+            </HStack>
           </Link>
         ))}
       </Stack>
@@ -79,26 +75,20 @@ export const Sidebar = () => {
           Social Media
         </Text>
         <HStack mt={2} spacing={6}>
-          <Link href={ROUTE_PATHS.TWITTER_URL}>
-            <a href={ROUTE_PATHS.TWITTER_URL} rel="noreferrer" target="_blank">
-              <IconBrandTwitter
-                color={COLOR_CODES.TWITTER}
-                fill={COLOR_CODES.TWITTER}
-                size={32}
-                stroke={1}
-                strokeLinejoin="miter"
-              />
-            </a>
+          <Link href={ROUTE_PATHS.TWITTER_URL} passHref rel="noreferrer" target="_blank">
+            <IconBrandTwitter
+              color={COLOR_CODES.TWITTER}
+              fill={COLOR_CODES.TWITTER}
+              size={32}
+              stroke={1}
+              strokeLinejoin="miter"
+            />
           </Link>
-          <Link href={ROUTE_PATHS.FACEBOOK_URL}>
-            <a href={ROUTE_PATHS.FACEBOOK_URL} rel="noreferrer" target="_blank">
-              <IconBrandFacebook color={COLOR_CODES.FACEBOOK} size={32} stroke={1.5} strokeLinejoin="miter" />
-            </a>
+          <Link href={ROUTE_PATHS.FACEBOOK_URL} passHref rel="noreferrer" target="_blank">
+            <IconBrandFacebook color={COLOR_CODES.FACEBOOK} size={32} stroke={1.5} strokeLinejoin="miter" />
           </Link>
-          <Link href={ROUTE_PATHS.GITHUB_URL}>
-            <a href={ROUTE_PATHS.GITHUB_URL} rel="noreferrer" target="_blank">
-              <IconBrandGithub color="black" size={32} stroke={1.5} strokeLinejoin="miter" />
-            </a>
+          <Link href={ROUTE_PATHS.GITHUB_URL} passHref rel="noreferrer" target="_blank">
+            <IconBrandGithub color="black" size={32} stroke={1.5} strokeLinejoin="miter" />
           </Link>
         </HStack>
       </Center>

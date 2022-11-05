@@ -54,16 +54,14 @@ export const HomePage: FC = () => {
       spacingY={gridColumns?.spacingY}
     >
       {contentList.map((content) => (
-        <Link href={content.path} key={content.path}>
-          <a href={content.path}>
-            <Image
-              alt={content.alt}
-              cursor="pointer"
-              height={imageStyle?.height}
-              src={content.src}
-              width={imageStyle?.width}
-            />
-          </a>
+        <Link href={content.path} key={content.path} passHref>
+          <Image
+            alt={content.alt}
+            cursor="pointer"
+            height={imageStyle?.height}
+            src={content.src}
+            width={imageStyle?.width}
+          />
         </Link>
       ))}
     </SimpleGrid>
