@@ -10,4 +10,5 @@ export const ROUTE_PATHS = {
   PORTFOLIO_URL: 'https://motonosuke.com',
   TWITTER_URL: 'https://twitter.com/motofreecall',
   YOUTUBE_CHANNEL_URL: 'https://www.youtube.com/channel/UCFp5T-QmCGCg-1KJ92Y-QHg',
+  ZENN_ACHIEVEMENTS_URL: 'https://zenn.dev/motonosuke/articles/30352866e59e50',
 } as const;
