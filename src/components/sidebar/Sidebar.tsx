@@ -58,7 +58,7 @@ export const Sidebar = () => {
       <Stack px={paddingSize} spacing={12}>
         <Link href={ROUTE_PATHS.HOME} passHref>
           <chakra.span fontSize={textSize} fontWeight="bold">
-            &lt; Motonsouke / &gt;
+            &lt; Motonosuke / &gt;
           </chakra.span>
         </Link>
         {navList.map((nav) => (
