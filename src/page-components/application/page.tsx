@@ -35,7 +35,13 @@ export const ApplicationPage: FC = () => {
 
   const applicationList = [
     {
-      description: '本サイトです。\nアプリケーションや執筆記事が増え次第、随時更新していきます。',
+      description: (
+        <Text>
+          本サイトです。
+          <br />
+          アプリケーションや執筆記事が増え次第、随時更新していきます。
+        </Text>
+      ),
       imageAlt: 'portfolio',
       imagePath: IMAGE_PATHS.PORTFOLIO_MOCK,
       skillSet: PORTFOLIO_APPLICATION_SKILL,
@@ -43,8 +49,14 @@ export const ApplicationPage: FC = () => {
       url: ROUTE_PATHS.PORTFOLIO_URL,
     },
     {
-      description:
-        '乃木坂46のラジオを編集、サムネ作りなど行いYoutubeに投稿しています。\nそのコンテンツをラジオのスケジュールごとにまとたり、ラジオ時間内にツイートされたハッシュタグをまとめたりしています。',
+      description: (
+        <Text>
+          <s>乃木坂46のラジオを編集、サムネ作りなど行いYoutubeに投稿しています。</s>
+          （していましたが現在は諸事情でしていません）
+          <br />
+          乃木坂46のラジオのスケジュールごとにまとめています。
+        </Text>
+      ),
       imageAlt: '乃木坂ラジオアプリ',
       imagePath: IMAGE_PATHS.NOIGZAKA_APP_MOCK,
       skillSet: NOGIZAKRA_APPLICATION_SKILL,
